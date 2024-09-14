@@ -54,15 +54,20 @@ function ChatContainer() {
     <div className="h-screen flex flex-col bg-gray-100">
       {user ? (
         <>
-          <div className="h-1/7 bg-blue-500 text-white flex justify-between items-center px-4 py-2">
-            <h3>Username: {user}</h3>
-            <h3>ChatApp</h3>
-            <h3 className="cursor-pointer hover:underline" onClick={logoutFun}>Logout</h3>
+          <div className="bg-blue-500 text-white flex justify-between items-center px-4 py-2 md:py-4 md:px-6">
+            <h3 className="text-sm md:text-lg">Username: {user}</h3>
+            <h3 className="text-sm md:text-lg">ChatApp</h3>
+            <h3
+              className="cursor-pointer hover:underline text-sm md:text-lg"
+              onClick={logoutFun}
+            >
+              Logout
+            </h3>
           </div>
-          <div className="flex-grow overflow-y-auto">
+          <div className="flex-grow overflow-y-auto p-2 md:p-4">
             <ChatList chats={chats} />
           </div>
-          <div className="h-1/6 bg-gray-200 flex justify-center items-center p-4">
+          <div className="bg-gray-200 flex justify-center items-center p-2 md:p-4">
             <InputMsg addMessage={addMessage} />
           </div>
         </>
